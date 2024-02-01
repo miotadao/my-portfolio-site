@@ -1,23 +1,28 @@
-import logo from './logo.svg';
 import './App.css';
+import Contact from './components/Contact';
+import Header from './components/Header';
+import Myself from './components/Myself';
+import Tadao from './components/Tadao';
+import Technology from './components/Technology';
+import Works from './components/Works';
+
 
 function App() {
+  const ids = [
+    'myself',
+    'works',
+    'technology',
+    'contact'
+  ];
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Header ids={ids}/>
+      <Tadao ids={ids}/>
+      <Myself ids={ids}/>
+      <Works ids={ids}/>
+      <Technology ids={ids}/>
+      <Contact ids={ids}/>
     </div>
   );
 }
