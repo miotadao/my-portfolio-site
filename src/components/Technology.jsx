@@ -1,30 +1,35 @@
 import React from 'react'
+import html480 from "../images/html480.png"
+import css480 from "../images/css480.png"
+import javascript480 from "../images/javascript480.png"
+import reactNative480 from "../images/react-native480.png"
+
 
 const Technology = (props) => {
   const items = [
     {
       title: "HTML",
-      img: "icons8-html-480.png",
+      img: html480,
       text: "Progate・ドットインストール・YouTube・参考書で勉強。参考書やネットで調べながら使える。",
     },
     {
       title: "CSS",
-      img: "icons8-css-480.png",
+      img: css480,
       text: "Progate・ドットインストール・YouTube・参考書で勉強。参考書やネットで調べながら使える。",
     },
     {
       title: "Javascript",
-      img: "icons8-javascript-480.png",
+      img: javascript480,
       text: "ドットインストール・YouTube・参考書で勉強。参考書やネットで調べながら使える。"
     },
     {
       title: "React",
-      img: "icons8-react-native-480.png",
+      img: reactNative480,
       text: "ドットインストール・YouTubeで勉強。参考書やネットで調べながら使える。簡単なアプリやサイトを作成する事が出来る。",
     },
   ];
   return (
-    <div className='container' id={props.ids[2]}>
+    <div className='container tec-container' id={props.ids[2]}>
       <h2>技術一覧</h2>
       <ul className='tech-ul'>
         {items.map((item, index) => {

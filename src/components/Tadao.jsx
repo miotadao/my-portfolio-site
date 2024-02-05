@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
-const Tadao = () => {
+const Tadao = (props) => {
+
+  useEffect(() => {
+    
+  });
   return (
     <div className='tadao-container' id='tadao'>
-      <div className='tadao2'>
+      <div className={props.width > 768 ? "tadao2" : "mobile-tadao"}>
         <p>mio's portfolio</p>
       </div>
     </div>
