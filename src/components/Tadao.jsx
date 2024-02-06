@@ -7,7 +7,7 @@ const Tadao = (props) => {
   });
   return (
     <div className='tadao-container' id='tadao'>
-      <div className={props.width > 768 ? "tadao2" : "mobile-tadao"}>
+      <div className={props.width > 450 ? "tadao2" : "mobile-tadao"}>
         <p>mio's portfolio</p>
       </div>
     </div>

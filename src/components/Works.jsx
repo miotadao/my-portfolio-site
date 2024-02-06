@@ -46,7 +46,7 @@ const Works = (props) => {
     {
       title: '在庫管理アプリ',
       img: stockIcon,
-      text: '　在庫リストのページに商品の名前と数量を入力するとリスト化されていきます。リストの「-1」ボタンを押すと残数が減っていきます。残数がゼロになると自動的に在庫のリストから削除されます。「カート」ボタンを押すと買い物リストに追加されます。買い物リストの「✔」ボタンを押すと商品名に取り消し線が付き購入済みとなります。最後に「全削除」ボタンで購入済みの商品をまとめて削除します。アプリを一度閉じても内容が保存されるようにローカルストレージにリストの内容を保存されるようになっています。',
+      text: '　在庫リストのページに商品の名前と数量を入力するとリスト化されていきます。リストの「-1」ボタンを押すと残数が減ります。残数がゼロになるとリストから削除されます。「カート」ボタンを押すと買い物リストに追加されます。買い物リストの「✔」ボタンを押すと取り消し線が付き購入済みとなります。最後に「全削除」ボタンで購入済みの商品をまとめて削除します。アプリを一度閉じても内容が保存されるようにローカルストレージにリストの内容を保存されるようになっています。',
       sourceCode: 'https://github.com/miotadao/stock-manager',
       url: 'https://miotadao.github.io/stock-manager/',
       languageImgs: [
@@ -78,7 +78,7 @@ const Works = (props) => {
   ]);
 
 
-  let [ currentIndex, setCurrentIndex ] = useState(0);
+  let [currentIndex, setCurrentIndex] = useState(0);
   let newCurrentIndex;
   let ulRef = useRef(null);
   let liRef = useRef(null);
@@ -111,7 +111,7 @@ const Works = (props) => {
           // currentIndex++;
           // ulRef.current.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`; 
           newCurrentIndex = currentIndex + 1;
-          ulRef.current.style.transform = `translateX(${-1 * slideWidth * newCurrentIndex}px)`; 
+          ulRef.current.style.transform = `translateX(${-1 * slideWidth * newCurrentIndex}px)`;
           currentBtnHandler(newCurrentIndex);
         }
         if (event.dir == "Right" && currentIndex > 0) {
@@ -119,8 +119,7 @@ const Works = (props) => {
           // currentIndex--;
           // ulRef.current.style.transform = `translateX(${-1 * slideWidth * currentIndex}px)`;
           newCurrentIndex = currentIndex - 1;
-          ulRef.current.style.transform = `translateX(${-1 * slideWidth * newCurrentIndex}px)`;
-          
+          ulRef.current.style.transform = `translateX(${-1 * slideWidth * newCurrentIndex}px)`
           currentBtnHandler(newCurrentIndex);
         }
       }
@@ -142,9 +141,12 @@ const Works = (props) => {
           {items.map((item, index) => {
             return <li key={index} className='mobile-li' ref={liRef}>
               <h3>{item.title} <span className={item.isConfidence ? "confidence" : "hide"}>自信作！</span></h3>
-              <a href={item.url}>
-                <img className='page-icons' src={item.img} alt="" />
-              </a>
+              <div className="img-click">
+                <span>⇩　クリック！ ⇩</span>
+                <a href={item.url}>
+                  <img className='page-icons' src={item.img} alt="" />
+                </a>
+              </div>
               <a href={item.sourceCode} className='sorce-code'>ソースコード➜</a>
               <h4>説明<span></span></h4>
               <p className='explanation'>{item.text}</p>
@@ -157,7 +159,7 @@ const Works = (props) => {
           })}
         </ul>
       </div>
-      <ul className={`slideBtns ${props.width < 768 ? "" : "hide"}`}>
+      <ul className="slideBtns">
         {items.map((item, index) => {
           return <button key={index} onClick={() => btnHandle(index)} className={`li-btn ${item.isCurrent ? "current-btn" : ""}`}></button>
         })}

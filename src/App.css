@@ -170,6 +170,19 @@ a {
   width: 80%;
 }
 
+.img-click {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.img-click span {
+  font-size: 13px;
+  opacity: .6;
+  color: red;
+}
+
 
 .page-icons {
   width: 140px;
@@ -177,6 +190,7 @@ a {
   border-radius: 70px;
   object-fit: cover;
   background-color: rgb(231, 226, 220);
+  border: 2px solid #ccc;
 }
 
 .page-icons:hover {
@@ -230,6 +244,10 @@ a {
   border: solid 3px red;
   border-radius: 10px;
   padding: 2px;
+}
+
+.slideBtns {
+  display: none;
 }
 
 .hide {
@@ -289,7 +307,14 @@ a {
   font-size: 20px;
 }
 
-@media screen and (max-width: 768px) {
+
+@media screen and (max-width: 450px) {
+
+}
+
+
+
+@media screen and (max-width: 450px) {
 
   .container {
     gap: 15px;
@@ -501,6 +526,17 @@ a {
 .works h3 {
   font-size: 15px;
 }
+
+.img-click {
+  gap: 4px;
+}
+
+.img-click span {
+  font-size: 9px;
+  opacity: .6;
+  color: red;
+}
+
 
 .page-icons {
   width: 85px;
