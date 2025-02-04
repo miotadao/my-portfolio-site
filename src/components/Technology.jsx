@@ -3,6 +3,8 @@ import html480 from "../images/html480.png"
 import css480 from "../images/css480.png"
 import javascript480 from "../images/javascript480.png"
 import reactNative480 from "../images/react-native480.png"
+import typescript from "../images/typescript512.png"
+import Rails from "../images/Ruby_on_Rails-Logo.wine_.png"
 
 
 const Technology = (props) => {
@@ -26,6 +28,16 @@ const Technology = (props) => {
       title: "React",
       img: reactNative480,
       text: "ドットインストール・YouTubeで勉強。参考書やネットで調べながら使える。簡単なアプリやサイトを作成する事が出来る。",
+    },
+    {
+      title: "TypeScript",
+      img: typescript,
+      text: "ドットインストール・YouTubeで勉強。参考書やネットで調べながら使える。",
+    },
+    {
+      title: "Ruby on Rails",
+      img: Rails,
+      text: "ドットインストール・YouTubeで勉強。参考書やネットで調べながら使える。",
     },
   ];
   return (

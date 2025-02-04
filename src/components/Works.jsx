@@ -4,10 +4,15 @@ import typing from "../images/typing.png"
 import kanji from "../images/kanji.png"
 import stockIcon from "../images/stockIcon.png"
 import calculationIcon from "../images/calculationIcon.png"
+import tablet from "../images/tablet.png"
+import text from "../images/text.png"
 import html48 from "../images/html48.png"
 import css48 from "../images/css48.png"
 import javascript48 from "../images/javascript48.png"
+import typescript from "../images/ts.jpg"
 import reactNative48 from "../images/react-native48.png"
+import Ruby_on_Rails from "../images/Ruby_on_Rails-Logo.wine_.png"
+
 
 
 
@@ -62,7 +67,7 @@ const Works = (props) => {
     {
       title: '自動計算アプリ',
       img: calculationIcon,
-      text: '　大学の授業で証券のリターンを求める計算がいくつかあったのですがどれも自力で解くのは大変だったため自動で計算されるアプリがあれば便利と思い作りました。実際に先生にシンプルで使いやすいと言ってもらい授業内で紹介されました。ほかの生徒さんにも使ってもらいました。スマホでもパソコンでも使えます。後々修正点が出ても直しやすいように重複する処理は親コンポーネントにまとめました。一番の自信作です。',
+      text: '　大学の授業で証券のリターンを求める計算がいくつかあったのですがどれも自力で解くのは大変だったため自動で計算されるアプリがあれば便利と思い作りました。実際に先生にシンプルで使いやすいと言ってもらい授業内で紹介してもらいました。スマホでもパソコンでも使えます。後々修正点が出ても直しやすいように重複する処理は親コンポーネントにまとめました。一番の自信作です。',
       sourceCode: 'https://github.com/miotadao/calculation2/tree/main',
       url: 'https://miotadao.github.io/calculation2/',
       languageImgs: [
@@ -74,6 +79,38 @@ const Works = (props) => {
       isConfidence: true,
       isCurrent: false,
       id: 3
+    },
+    {
+      title: 'メニューオーダー',
+      img: tablet,
+      text: '　飲食店のタブレット注文を見て自分にも作れそうだと思ったので作成しました。お客さんのタブレット画面と従業員側のオーダー画面、売り切れ設定画面の三つに分けて作りました。三つの画面が連動していて注文受け取り、料理提供、料理の残数（売り切れ）設定などが出来ます。',
+      sourceCode: 'https://github.com/miotadao/menu-order',
+      url: 'https://miotadao.github.io/menu-order/',
+      languageImgs: [
+        html48,
+        css48,
+        typescript,
+        reactNative48,
+      ],
+      isConfidence: false,
+      isCurrent: false,
+      id: 4
+    },
+    {
+      title: 'テキストフリマサイト',
+      img: text,
+      text: '　大学の教科書が高いので、使わなくなった教科書を学生同士でやり取りできるサイトがあればいいなと思い作成しました。作成時にバックエンド側も操作できるようにRailsを勉強し取り入れました。デプロイ時にサイト内の画像をCloudinaryで保持させること、メール通知機能をMailgunで実装するのに苦戦しました。',
+      sourceCode: 'https://github.com/miotadao/text-hurima',
+      url: 'https://text-hurima-70a859267649.herokuapp.com/',
+      languageImgs: [
+        Ruby_on_Rails,
+        html48,
+        css48,
+        javascript48
+      ],
+      isConfidence: true,
+      isCurrent: false,
+      id: 4
     },
   ]);
 
@@ -127,7 +164,7 @@ const Works = (props) => {
   });
 
   const btnHandle = (index) => {
-    slideWidth = liRef.current.offsetWidth;   //これがないと動かない
+    slideWidth = liRef.current.offsetWidth;  
     newCurrentIndex = index;
     ulRef.current.style.transform = `translateX(${-1 * slideWidth * newCurrentIndex}px)`;
     currentBtnHandler(newCurrentIndex);
@@ -139,7 +176,7 @@ const Works = (props) => {
       <div className='mobile-container' {...handlers}>
         <ul className='works-ul' ref={ulRef}>
           {items.map((item, index) => {
-            return <li key={index} className='mobile-li' ref={liRef}>
+            return <li key={index} className='mobile-li works-li' ref={liRef}>
               <h3>{item.title} <span className={item.isConfidence ? "confidence" : "hide"}>自信作！</span></h3>
               <div className="img-click">
                 <span>⇩　クリック！ ⇩</span>
